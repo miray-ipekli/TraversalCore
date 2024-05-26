@@ -1,0 +1,119 @@
+﻿@model TraversalCore.Models.UserRegisterViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Traversal Kayıt Ol</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords"
+          content="Hayalinizdeki tatili gerçeğe dönüştürmek için kayıt olun! Seyahat etmek için yeni maceralara hazır olun." />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //Meta tag Keywords -->
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="~/web/css/style.css" type="text/css" media="all" />
+    <style type="text/css">
+        .text-danger {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+    <!--//Style-CSS -->
+</head>
+
+<body>
+    <!-- /login-section -->
+    <section class="w3l-login-6">
+        <div class="login-hny">
+            <div class="form-content">
+                <div class="form-right">
+                    <div class="overlay">
+                        <div class="grid-info-form">
+                            <h5>Traversal Rezervasyon</h5>
+                            <h3>Kaydolun ve Keşfe Çıkın! </h3>
+                            <p>
+                                Hayalinizdeki tatili gerçeğe dönüştürmek için kayıt olun! Seyahat etmek için yeni maceralara hazır olun.
+                            </p>
+                            <a href="/SignIn" class="read-more-1 btn">Giriş Yap</a>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-left">
+                    <div class="middle">
+                        <h4>Bize Katıl</h4>
+                        <p>Yeni Hesap Oluşturun</p>
+                    </div>
+                    <form method="post" class="signin-form">
+                        <div class="form-input">
+                            <label>Adınız</label>
+                            <input type="text" asp-for="Name" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Soyadınız</label>
+                            <input type="text" asp-for="Surname" />
+                            <span asp-validation-for="Surname" class="text-danger"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Kullanıcı Adınız</label>
+                            <input type="text" asp-for="Username" />
+                            <span asp-validation-for="Username" class="text-danger"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>E-Postanız</label>
+                            <input type="email" asp-for="Mail" />
+                            <span asp-validation-for="Mail" class="text-danger"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Şifreniz</label>
+                            <input type="Password" asp-for="Password" required />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-input">
+                            <label>Şifre Tekrar</label>
+                            <input type="Password" asp-for="ConfirmPassword" required />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+
+                        @*Şifre kuralları için uyarı veriyor. Yalnızca eksik olanı söylüyor.*@
+                        @*Örneğin m123 yazarsam -> büyük harf ve özel karakter uyarısı veriyor.*@
+                        @*sadece divi yazarsam ingilizce şekilde uyarı veriyor.*@
+                        <div class="text-danger" asp-validation-summary="ModelOnly">
+                        </div>
+
+                        <label class="container">
+                            Şartları <a href="#">okudum ve kabul ediyorum.</a>
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <button class="btn">Kayıt Ol</button>
+                    </form>
+                    <div class="copy-right text-center">
+                        <p>
+                            © 2019 Invent Signup. All rights reserved | Design by
+                            <a href="http://w3layouts.com/" target="_blank">W3layouts</a>
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- //login-section -->
+</body>
+
+</html>
